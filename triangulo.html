@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Área de Triângulo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    header {
+        background-color: #0077b6;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    .main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .form {
+        text-align: center;
+    }
+    h2 {
+        margin-bottom: 20px;
+    }
+    p {
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+    #inputs {
+        text-align: center;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #0077b6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #005d85;
+    }
+    #result {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Calculadora de Área de Triângulo</h1>
+</header>
+<div class="main">
+    <div class="form">
+        <h2>Calculadora de Área de Triângulo</h2>
+        <p>Um triângulo é uma figura geométrica com três lados e três ângulos. A área de um triângulo pode ser calculada multiplicando a base do triângulo pela altura e dividindo por 2.</p>
+        <div id="inputs">
+            <label for="base">Base:</label>
+            <input type="number" id="base" step="any">
+            <br>
+            <label for="height">Altura:</label>
+            <input type="number" id="height" step="any">
+            <br>
+            <button onclick="calculateArea()">Calcular Área</button>
+        </div>
+        <div id="result"></div>
+    </div>
+</div>
+
+<script>
+    function calculateArea() {
+        var base = parseFloat(document.getElementById('base').value);
+        var height = parseFloat(document.getElementById('height').value);
+        
+        if (isNaN(base) || isNaN(height)) {
+            alert("Por favor, insira valores válidos para a base e altura do triângulo.");
+            return;
+        }
+        
+        var area = 0.5 * base * height;
+        document.getElementById('result').innerHTML = "<p>A área do triângulo é: " + area.toFixed(2) + " unidades quadradas.</p>";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Área de Retângulo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    header {
+        background-color: #0077b6;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    #form {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #form h2 {
+        margin-bottom: 20px;
+    }
+
+    #form p {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #0077b6;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #005d85;
+    }
+
+    #result {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Calculadora de Área de Retângulo</h1>
+</header>
+<main>
+    <section id="form">
+        <h2>Calculadora de Área de Retângulo</h2>
+        <p>Um retângulo é uma figura geométrica com quatro lados, onde os lados opostos são iguais e os ângulos internos são todos retos (90 graus).</p>
+        <label for="length">Comprimento:</label>
+        <input type="number" id="length" placeholder="Insira o comprimento">
+        <label for="width">Largura:</label>
+        <input type="number" id="width" placeholder="Insira a largura">
+        <button onclick="calculateArea()">Calcular Área</button>
+        <div id="result"></div>
+    </section>
+</main>
+
+
+<script>
+function calculateArea() {
+    var length = parseFloat(document.getElementById('length').value);
+    var width = parseFloat(document.getElementById('width').value);
+    
+    if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+        alert("Por favor, insira valores válidos para o comprimento e a largura do retângulo.");
+        return;
+    }
+    
+    var area = length * width;
+    document.getElementById('result').innerHTML = "<p>A área do retângulo é: " + area.toFixed(2) + " unidades quadradas.</p>";
+}
+</script>
+
+</body>
+</html>
